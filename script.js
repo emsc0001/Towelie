@@ -1,6 +1,17 @@
 "use strict";
 
-// window.addEventListener("load", start);
+window.addEventListener("load", initApp);
+
+async function initApp() {
+  const Towelie = await showCharacter("data/towelie.json");
+  console.log(Towelie);
+}
+
+async function getCharacter(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
 
 const towelie = {
   name: "Towelie",
