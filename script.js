@@ -3,8 +3,7 @@
 window.addEventListener("load", initApp);
 
 async function initApp() {
-  const towelie = await getCharacter("towelie.json");
-  const jimmy = await getCharacter("https://raw.githubusercontent.com/Forkeh/South-Park-App/main/data/jimmy.json");
+  const towelie = await getCharacter("Data/towelie.json");
   const jack = await getCharacter("https://raw.githubusercontent.com/YawHB/South_Park_Project/main/data/jack.json")
   const TolkienBlack = await getCharacter("https://raw.githubusercontent.com/Abdiox/South-park1/main/Data/southPark.json")
   const BarackObama = await getCharacter("https://raw.githubusercontent.com/AliHMohammad/Data-Ali/main/obamaChar.json")
@@ -21,7 +20,7 @@ async function initApp() {
   showCharacter(Butters);
   showCharacter(TolkienBlack);
   showCharacter(Tuong);
-  showCharacter(jimmy);
+  showCharacter(Jerome);
   showCharacter(jack);
   showCharacter(BarackObama);
   showCharacter(Jimmy);
