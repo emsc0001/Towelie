@@ -60,7 +60,7 @@ function showCharacter(person) {
     document.querySelector("#dialog-voicedby").textContent = person.voicedby;
     document.querySelector("#dialog-gender").textContent = person.gender;
     document.querySelector("#dialog-religion").textContent = person.religion;
-    document.querySelector("#dialog-hair").textContent = person.haircolor;
+    document.querySelector("#dialog-haircolor").textContent = person.haircolor;
     document.querySelector("#dialog-schoolgrade").textContent = person.schoolgrade;
     document.querySelector("#dialog-episodes").textContent = person.episodes;
     document.querySelector("#dialog-appearances").textContent = person.appearances;
