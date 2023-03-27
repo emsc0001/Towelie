@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-size: 1.5em;
 }
-/* Header styling */
+
 header {
   text-align: center;
   color: rgb(255, 255, 255);
@@ -11,7 +11,6 @@ header {
   padding: 10px;
 }
 
-/* Footer styling */
 footer {
   text-align: center;
   color: rgb(255, 255, 255);
@@ -21,16 +20,13 @@ footer {
   padding: 10px;
 }
 
-/* main styling */
 main {
   background: gainsboro;
   animation: fadeIn 0.4s;
 }
 
-/* Dialog styling */
 #dialog {
   text-align: left;
-  /* font-weight: bold; */
 }
 
 #dialog-btn {
@@ -64,8 +60,6 @@ dialog::backdrop {
   grid-template-columns: 1fr 1fr;
 }
 
-/* Grid */
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -74,27 +68,6 @@ dialog::backdrop {
   text-align: center;
 }
 
-@media (min-width: 600px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 992px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-@media (min-width: 1200px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-@media (min-width: 1500px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-}
 
 .grid-item {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
@@ -120,9 +93,31 @@ dialog::backdrop {
   margin: 0.3em 0;
 }
 
-/* Form styling */
 form {
   margin: 2em auto 0;
   padding: 1em 1em 2em;
   text-align: center;
+}
+
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1500px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }

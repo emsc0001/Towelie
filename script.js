@@ -1,9 +1,66 @@
 "use strict";
 
-window.addEventListener("load", initApp);
+window.addEventListener("load", start);
 
-async function initApp() {
-  // const towelie = await getCharacter("Data/towelie.json");
+async function start() {
+  const showAllCharacters = await getCharacter("data/towelie.json")
+  showAllCharacters.forEach(showCharacter);
+}
+
+async function getCharacter(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
+
+function showCharacter(character) {
+  const HTML =
+    /*html*/
+    `
+    <article class="grid-item">
+    <img src="${character.image}">
+    <h1><span>${character.name}</span></h1>
+    <p><strong>Alias:</strong><span>${character.nickname}</span></span></p>
+    </article>`;
+
+  document.querySelector("#characters").insertAdjacentHTML("beforeend", HTML);
+  document.querySelector("#characters article:last-child").addEventListener("click", characterClicked);
+
+
+  function characterClicked() {
+    document.querySelector("#dialog-image").src = character.image;
+    document.querySelector("#dialog-name").textContent = character.name;
+    document.querySelector("#dialog-nickname").textContent = character.nickname;
+    document.querySelector("#dialog-occupation").textContent = character.occupation;
+    document.querySelector("#dialog-age").textContent = character.age;
+    document.querySelector("#dialog-voicedBy").textContent = character.voicedBy;
+    document.querySelector("#dialog-gender").textContent = character.gender;
+    document.querySelector("#dialog-religion").textContent = character.religion;
+    document.querySelector("#dialog-hairColor").textContent = character.hairColor;
+    document.querySelector("#dialog-catchPhrase").textContent = character.catchPhrase;
+    document.querySelector("#dialog-schoolGrade").textContent = character.schoolGrade;
+    document.querySelector("#dialog-episodes").textContent = character.episodes;
+    document.querySelector("#dialog-appearances").textContent = character.appearances;
+    document.querySelector("#dialog-firstAppearance").textContent = character.firstAppearance;
+    document.querySelector("#dialog").showModal();
+  }
+}
+
+function showCharacterModal(list) {
+  showCharacter(character);
+}
+
+function showDialog(character) {}
+
+function closeDialog() {}
+
+// function showAllCharacters(character) {
+//   showCharacter(character);
+// }
+
+
+// const towelie = await getCharacter("Data/towelie.json");
   // const jack = await getCharacter("https://raw.githubusercontent.com/YawHB/South_Park_Project/main/data/jack.json")
   // const TolkienBlack = await getCharacter("https://raw.githubusercontent.com/Abdiox/South-park1/main/Data/southPark.json")
   // const BarackObama = await getCharacter("https://raw.githubusercontent.com/AliHMohammad/Data-Ali/main/obamaChar.json")
@@ -26,101 +83,3 @@ async function initApp() {
   // showCharacter(Jimmy);
   // showCharacter(Eric);
   // showCharacter(heather);
-
-  const showAllCharacters = await getCharacter("data/towelie.json")
-  showAllCharacters.forEach(showCharacter);
-}
-
-async function getCharacter(url) {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
-}
-
-function showAllCharacters(list) {
-  showCharacter(person);
-}
-
-function showCharacter(person) {
-  const HTML =
-    /*html*/
-    `
-    <article class="grid-item">
-    <img src="${person.image}">
-    <h1><span>${person.name}</span></h1>
-    <p><strong>Aka: </strong><span>${person.nickname}</span></span></p>
-    </article>
-      `;
-  document.querySelector("#characters").insertAdjacentHTML("beforeend", HTML);
-  document.querySelector("#characters article:last-child").addEventListener("click", characterClicked);
-
-  function characterClicked() {
-    document.querySelector("#dialog-image").textContent = person.image;
-    document.querySelector("#dialog-name").textContent = person.name;
-    document.querySelector("#dialog-nickname").textContent = person.nickname;
-    document.querySelector("#dialog-occupation").textContent = person.occupation;
-    document.querySelector("#dialog-age").textContent = person.age;
-    document.querySelector("#dialog-voicedBy").textContent = person.voicedBy;
-    document.querySelector("#dialog-gender").textContent = person.gender;
-    document.querySelector("#dialog-religion").textContent = person.religion;
-    document.querySelector("#dialog-hairColor").textContent = person.hairColor;
-    document.querySelector("#dialog-catchPhrase").textContent = person.catchPhrase;
-    document.querySelector("#dialog-schoolGrade").textContent = person.schoolGrade;
-    document.querySelector("#dialog-episodes").textContent = person.episodes;
-    document.querySelector("#dialog-appearances").textContent = person.appearances;
-    document.querySelector("#dialog-firstAppearance").textContent = person.firstAppearance;
-    document.querySelector("#dialog").showModal();
-  }
-}
-
-function showDialog(person) {}
-
-function closeDialog() {}
-
-
-
-
-
-// function addCharacter(characters) {
-//   const html = /*html*/ `
-//     <li>
-//     <p><strong>Name:</strong> ${characters.name}</p>
-//     <img src="${characters.image}" alt = "" style="width: 10%" image>
-//     <p><strong>Nickname:</strong> ${characters.nickname}</p> 
-//     <p><strong>Occupation:</strong> ${characters.occupation}</p> 
-//     <p><strong>Age:</strong> ${characters.age}</p> 
-//     <p><strong>VoiceBy:</strong> ${characters.voiceBy}</p> 
-//     <p><strong>Gender:</strong> ${characters.gender}</p> 
-//     <p><strong>Religion:</strong> ${characters.religion}</p> 
-//     <p><strong>CatchPhrase:</strong> ${characters.catchPhrase}</p> 
-//     <p><strong>HairColor:</strong> ${characters.hairColor}</p> 
-//     <p><strong>Schoolgrade:</strong> ${characters.schoolgrade}</p> 
-//     <p><strong>Episode:</strong> ${characters.episode}</p> 
-//     <p><strong>Apperances:</strong> ${characters.apperances}</p> 
-//     <p><strong>FirstAppearence:</strong> ${characters.firstAppearence}</p> 
-//     </li>`;
-
-//   list.insertAdjacentHTML("beforeend", html);
-// }
-
-// // function start() {
-//   const data = getData();
-//   showAllCharacters(data)
-// }
-
-// // function getData(){
-//   const data = [];
-//   return data;
-// }
-
-// // function showAllCharacters (list) {
-//   showCharacter(character);
-// }
-
-// // function showCharacter (character) {
-//   const html = ``;
-// }
-
-// function showDialog() {}
-
-// function closeDialog () {}
