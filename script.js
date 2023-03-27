@@ -3,7 +3,7 @@
 window.addEventListener("load", start);
 
 async function start() {
-  const showAllCharacters = await getCharacter("data/towelie.json")
+  const showAllCharacters = await getCharacter("Data/alldata.json")
   showAllCharacters.forEach(showCharacter);
 }
 
@@ -47,9 +47,7 @@ function showCharacter(character) {
   }
 }
 
-function showCharacterModal(list) {
-  showCharacter(character);
-}
+
 
 function showDialog(character) {}
 
