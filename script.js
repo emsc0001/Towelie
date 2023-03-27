@@ -3,29 +3,32 @@
 window.addEventListener("load", initApp);
 
 async function initApp() {
-  const towelie = await getCharacter("Data/towelie.json");
-  const jack = await getCharacter("https://raw.githubusercontent.com/YawHB/South_Park_Project/main/data/jack.json")
-  const TolkienBlack = await getCharacter("https://raw.githubusercontent.com/Abdiox/South-park1/main/Data/southPark.json")
-  const BarackObama = await getCharacter("https://raw.githubusercontent.com/AliHMohammad/Data-Ali/main/obamaChar.json")
-  const Butters = await getCharacter("https://raw.githubusercontent.com/Asbjoernemil/data-assignment/main/data/characters.json")
-  const heather = await getCharacter("https://raw.githubusercontent.com/Benjamin-Harris1/Data-app/main/data/heather.json");
-  const Jimmy = await getCharacter("https://raw.githubusercontent.com/Forkeh/South-Park-App/main/data/jimmy.json")
-  const Eric = await getCharacter("https://raw.githubusercontent.com/Bindholt/Data-Projekt/main/data/cartman.json")
-  const Tuong = await getCharacter("https://raw.githubusercontent.com/TheDanishMexican/object-south-park/main/data/app.json")
-  const Jerome = await getCharacter("https://raw.githubusercontent.com/emilvn/data-fetch-assignment/main/data/southpark.json")
-  const Kyle = await getCharacter("https://raw.githubusercontent.com/fili0727/Data-opgave/main/kyle.json")
+  // const towelie = await getCharacter("Data/towelie.json");
+  // const jack = await getCharacter("https://raw.githubusercontent.com/YawHB/South_Park_Project/main/data/jack.json")
+  // const TolkienBlack = await getCharacter("https://raw.githubusercontent.com/Abdiox/South-park1/main/Data/southPark.json")
+  // const BarackObama = await getCharacter("https://raw.githubusercontent.com/AliHMohammad/Data-Ali/main/obamaChar.json")
+  // const Butters = await getCharacter("https://raw.githubusercontent.com/Asbjoernemil/data-assignment/main/data/characters.json")
+  // const heather = await getCharacter("https://raw.githubusercontent.com/Benjamin-Harris1/Data-app/main/data/heather.json");
+  // const Jimmy = await getCharacter("https://raw.githubusercontent.com/Forkeh/South-Park-App/main/data/jimmy.json")
+  // const Eric = await getCharacter("https://raw.githubusercontent.com/Bindholt/Data-Projekt/main/data/cartman.json")
+  // const Tuong = await getCharacter("https://raw.githubusercontent.com/TheDanishMexican/object-south-park/main/data/app.json")
+  // const Jerome = await getCharacter("https://raw.githubusercontent.com/emilvn/data-fetch-assignment/main/data/southpark.json")
+  // const Kyle = await getCharacter("https://raw.githubusercontent.com/fili0727/Data-opgave/main/kyle.json")
 
-  showCharacter(towelie);
-  showCharacter(Kyle);
-  showCharacter(Butters);
-  showCharacter(TolkienBlack);
-  showCharacter(Tuong);
-  showCharacter(Jerome);
-  showCharacter(jack);
-  showCharacter(BarackObama);
-  showCharacter(Jimmy);
-  showCharacter(Eric);
-  showCharacter(heather);
+  // showCharacter(towelie);
+  // showCharacter(Kyle);
+  // showCharacter(Butters);
+  // showCharacter(TolkienBlack);
+  // showCharacter(Tuong);
+  // showCharacter(Jerome);
+  // showCharacter(jack);
+  // showCharacter(BarackObama);
+  // showCharacter(Jimmy);
+  // showCharacter(Eric);
+  // showCharacter(heather);
+
+  const showAllCharacters = await getCharacter("data/towelie.json")
+  showAllCharacters.forEach(showCharacter);
 }
 
 async function getCharacter(url) {
@@ -57,14 +60,15 @@ function showCharacter(person) {
     document.querySelector("#dialog-nickname").textContent = person.nickname;
     document.querySelector("#dialog-occupation").textContent = person.occupation;
     document.querySelector("#dialog-age").textContent = person.age;
-    document.querySelector("#dialog-voicedby").textContent = person.voicedby;
+    document.querySelector("#dialog-voicedBy").textContent = person.voicedBy;
     document.querySelector("#dialog-gender").textContent = person.gender;
     document.querySelector("#dialog-religion").textContent = person.religion;
-    document.querySelector("#dialog-haircolor").textContent = person.haircolor;
-    document.querySelector("#dialog-schoolgrade").textContent = person.schoolgrade;
+    document.querySelector("#dialog-hairColor").textContent = person.hairColor;
+    document.querySelector("#dialog-catchPhrase").textContent = person.catchPhrase;
+    document.querySelector("#dialog-schoolGrade").textContent = person.schoolGrade;
     document.querySelector("#dialog-episodes").textContent = person.episodes;
     document.querySelector("#dialog-appearances").textContent = person.appearances;
-    document.querySelector("#dialog-firstappearance").textContent = person.firstappearance;
+    document.querySelector("#dialog-firstAppearance").textContent = person.firstAppearance;
     document.querySelector("#dialog").showModal();
   }
 }
