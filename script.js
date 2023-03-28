@@ -3,8 +3,8 @@
 window.addEventListener("load", start);
 
 async function start() {
-  const showAllCharacters = await getCharacter("Data/alldata.json")
-  showAllCharacters.forEach(showCharacter);
+  const characters = await getCharacter("data/allCharacters.json")
+  characters.forEach(showCharacter);
 }
 
 async function getCharacter(url) {
