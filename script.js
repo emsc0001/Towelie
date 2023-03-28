@@ -21,7 +21,7 @@ function showCharacter(character) {
     <article class="grid-item">
     <img src="${character.image}">
     <h1><span>${character.name}</span></h1>
-    <p><strong>Alias:</strong><span>${character.nickname}</span></span></p>
+    <p><strong>Alias: </strong><span>${character.nickname}</span></span></p>
     </article>`;
 
   document.querySelector("#characters").insertAdjacentHTML("beforeend", HTML);
