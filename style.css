@@ -68,7 +68,6 @@ dialog::backdrop {
   text-align: center;
 }
 
-
 .grid-item {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   padding: 1.5em;
@@ -83,7 +82,7 @@ dialog::backdrop {
 }
 
 .grid-item img {
-  width: 100%;
+  width: 110%;
   height: 400px;
   object-fit: cover;
   object-position: top;
@@ -98,7 +97,6 @@ form {
   padding: 1em 1em 2em;
   text-align: center;
 }
-
 
 @media (min-width: 600px) {
   .grid-container {
