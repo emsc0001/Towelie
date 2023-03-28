@@ -46,6 +46,7 @@ function showCharacter(character) {
     document.querySelector("#dialog-appearances").textContent = character.appearances;
     document.querySelector("#dialog-firstAppearance").textContent = character.firstAppearance;
     document.querySelector("#dialog").showModal();
+    document.querySelector("#dialog").scrollTo(0, 0);
   }
 }
 

@@ -47,7 +47,7 @@ dialog {
   border-color: var(--green);
   background-color: rgb(118, 187, 228);
   width: 50vw;
-  height: 90vh;
+  height: 100vh;
   padding: 1em 1em;
 }
 
@@ -83,7 +83,7 @@ dialog::backdrop {
 
 .grid-item img {
   width: 110%;
-  height: 400px;
+  height: 350px;
   object-fit: cover;
   object-position: top;
 }
