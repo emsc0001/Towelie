@@ -4,7 +4,7 @@ window.addEventListener("load", start);
 
 async function start() {
   console.log(start, "App is running");
-  const characters = await getCharacter("data/allCharacters.json");
+  const characters = await getCharacter();
   characters.forEach(showCharacter);
 }
 
